@@ -1,0 +1,4 @@
+name:creating
+hosts:localhost
+task:old
+service:aaaaa
