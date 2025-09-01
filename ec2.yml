@@ -1,4 +1,32 @@
-name:creating
-hosts:localhost
-task:old
-service:aaaaa
+AWSTemplateFormatVersion: "2010-09-09"
+Description: creating ec2
+
+Resources:
+  MySecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: ssh access
+      VpcId: vpc-050764f6567a5daa5
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0  
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0  
+
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      KeyName: my-linux-keypair
+      ImageId: ami-00ca32bbc84273381  
+      SecurityGroupIds:
+        - !Ref MySecurityGroup
+      SubnetId: subnet-0c522366d4ac92c36
+      Tags:
+        - Key: Name
+          Value: automatic-cloud-instance
+
