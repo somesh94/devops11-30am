@@ -5,7 +5,7 @@ Resources:
   MyS3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: my-demo-cf-bucket-12345
+      BucketName: my-som-demo-bucket
       VersioningConfiguration:
         Status: Enabled
       PublicAccessBlockConfiguration:
