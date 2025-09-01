@@ -25,5 +25,5 @@ Resources:
       SubnetId: subnet-0c522366d4ac92c36
       Tags:
         - Key: Name
-          Value: automatic-cloud-instance
+          Value: New Amazon linux server
 
